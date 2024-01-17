@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed = 1000f;
+	
 
     // Use this for initialization
     void Start()
