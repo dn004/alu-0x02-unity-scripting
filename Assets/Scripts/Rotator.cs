@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Rotator : MonoBehaviour {
 
-	private int score = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -18,18 +17,5 @@ public class Rotator : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other){
-			
-			if (other.CompareTag("Pickup")){
-				Debug.Log("We are game");
-
-				score ++;
-				Debug.Log("Score: " + score);
-
-				Destroy(gameObject);
-
-			}
-
-	}
 	
 }
