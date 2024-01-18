@@ -15,18 +15,21 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+        void FixedUpdate()
     {
-        // Get input for movement
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        // Calculate movement vector (no vertical movement)
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
-
-        // Apply force to the rigidbody for movement with Time.deltaTime
         rb.AddForce(movement * speed * Time.deltaTime);
 
-        
+        // Debug logs for diagnosis
+        Debug.Log("Player Position: " + transform.position);
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("Trigger Enter! Other: " + other.gameObject.name);
+    }
+
 }
